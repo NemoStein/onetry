@@ -2,4 +2,5 @@
 ^bin
 ^obj
 ^devBundle
+^OneTry.lxml
 ^.*.db
