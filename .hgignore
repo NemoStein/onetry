@@ -1,5 +1,5 @@
-\rsrc
-\bin
-\obj
-\devBundle
+^rsrc
+^bin
+^obj
+^devBundle
 ^.*.db
