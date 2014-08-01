@@ -1,0 +1,44 @@
+[
+	// LiftPlatform intro levels
+	"lift/welcome",
+	"lift/dont",
+	"lift/chose",
+	
+	// DropPlatform intro levels
+	"drop/dropping",
+	"drop/stairway",
+	"drop/chose",
+	
+	// MovingPlatform intro levels
+	"moving/now",
+	"moving/who",
+	"moving/hate",
+	
+	// Treadmill intro levels
+	"treadmill/scrolling",
+	"treadmill/up",
+	"treadmill/merry",
+	
+	// Timer/TrapDoor intro levels
+	"timer/under",
+	
+	// Greg tests
+	"greg/01",
+	"greg/02",
+	"greg/03",
+	"greg/04",
+	"greg/05",
+	"greg/06",
+	"greg/07",
+	"greg/08",
+	
+	// Nemo tests
+	"nemo/01",
+	"nemo/02",
+	
+	/*
+		DON'T REMOVE THIS LINE!!
+		It's here to avoid adding/removing the last comma
+	*/
+	""
+]

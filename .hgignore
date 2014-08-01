@@ -1,0 +1,5 @@
+\rsrc
+\bin
+\obj
+\devBundle
+^.*.db

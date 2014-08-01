@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OgmoVersion>2.1.0.6</OgmoVersion>
+  <Name>OneTry</Name>
+  <BackgroundColor A="255" R="41" G="105" B="126" />
+  <GridColor A="255" R="148" G="186" B="205" />
+  <LevelDefaultSize>
+    <Width>480</Width>
+    <Height>288</Height>
+  </LevelDefaultSize>
+  <LevelMinimumSize>
+    <Width>400</Width>
+    <Height>240</Height>
+  </LevelMinimumSize>
+  <LevelMaximumSize>
+    <Width>2000</Width>
+    <Height>1200</Height>
+  </LevelMaximumSize>
+  <Filename>C:\Users\Toth\Desktop\Toth\melon lord\SourBit\Workspace\Games\onetry\assets\maps\OneTry.oep</Filename>
+  <AngleMode>Radians</AngleMode>
+  <CameraEnabled>false</CameraEnabled>
+  <CameraSize>
+    <Width>400</Width>
+    <Height>240</Height>
+  </CameraSize>
+  <ExportCameraPosition>false</ExportCameraPosition>
+  <LevelValueDefinitions>
+    <ValueDefinition xsi:type="FloatValueDefinition" Name="timeFail" Default="90" Min="0" Max="999" Round="0.1" />
+    <ValueDefinition xsi:type="FloatValueDefinition" Name="timeEasy" Default="45" Min="0" Max="999" Round="0.1" />
+    <ValueDefinition xsi:type="FloatValueDefinition" Name="timeMedium" Default="30" Min="0" Max="999" Round="0.1" />
+    <ValueDefinition xsi:type="FloatValueDefinition" Name="timeHard" Default="15" Min="0" Max="999" Round="0.1" />
+    <ValueDefinition xsi:type="FloatValueDefinition" Name="timeUnfair" Default="10" Min="0" Max="999" Round="0.1" />
+    <ValueDefinition xsi:type="StringValueDefinition" Name="name" Default="Unnamed" MaxChars="60" MultiLine="false" />
+  </LevelValueDefinitions>
+  <LayerDefinitions>
+    <LayerDefinition xsi:type="TileLayerDefinition">
+      <Name>Background</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+      <ExportMode>CSV</ExportMode>
+    </LayerDefinition>
+    <LayerDefinition xsi:type="TileLayerDefinition">
+      <Name>Collision</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+      <ExportMode>CSV</ExportMode>
+    </LayerDefinition>
+    <LayerDefinition xsi:type="TileLayerDefinition">
+      <Name>Decals1</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+      <ExportMode>CSV</ExportMode>
+    </LayerDefinition>
+    <LayerDefinition xsi:type="TileLayerDefinition">
+      <Name>Decals2</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+      <ExportMode>CSV</ExportMode>
+    </LayerDefinition>
+    <LayerDefinition xsi:type="TileLayerDefinition">
+      <Name>Decals3</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+      <ExportMode>CSV</ExportMode>
+    </LayerDefinition>
+    <LayerDefinition xsi:type="EntityLayerDefinition">
+      <Name>Props</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+    </LayerDefinition>
+  </LayerDefinitions>
+  <Tilesets>
+    <Tileset>
+      <Name>Collision</Name>
+      <FilePath>..\tileset\Collision.png</FilePath>
+      <TileSize>
+        <Width>16</Width>
+        <Height>16</Height>
+      </TileSize>
+      <TileSep>0</TileSep>
+    </Tileset>
+    <Tileset>
+      <Name>Decals</Name>
+      <FilePath>..\tileset\Decals.png</FilePath>
+      <TileSize>
+        <Width>16</Width>
+        <Height>16</Height>
+      </TileSize>
+      <TileSep>0</TileSep>
+    </Tileset>
+    <Tileset>
+      <Name>Background</Name>
+      <FilePath>..\tileset\Background.png</FilePath>
+      <TileSize>
+        <Width>16</Width>
+        <Height>16</Height>
+      </TileSize>
+      <TileSep>0</TileSep>
+    </Tileset>
+  </Tilesets>
+  <EntityDefinitions>
+    <EntityDefinition Name="CameraHelper" Limit="1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>8</Width>
+        <Height>8</Height>
+      </Size>
+      <Origin>
+        <X>-4</X>
+        <Y>-4</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="StringValueDefinition" Name="wait" Default="" MaxChars="-1" MultiLine="false" />
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="timeOnly" Default="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="true" Limit="-1" DrawMode="Path" Ghost="true" />
+    </EntityDefinition>
+    <EntityDefinition Name="Enter" Limit="1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>27</Width>
+        <Height>32</Height>
+      </Size>
+      <Origin>
+        <X>-3</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\door\Door.png" Tiled="true">
+        <RectColor A="255" R="0" G="128" B="192" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="EnumValueDefinition" Name="direction">
+          <Elements>
+            <string>right</string>
+            <string>left</string>
+          </Elements>
+        </ValueDefinition>
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="Path" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Exit" Limit="1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>27</Width>
+        <Height>32</Height>
+      </Size>
+      <Origin>
+        <X>-3</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\door\Door.png" Tiled="true">
+        <RectColor A="255" R="204" G="204" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Key" Limit="1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>16</Width>
+        <Height>12</Height>
+      </Size>
+      <Origin>
+        <X>-2</X>
+        <Y>-3</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\key\Key.png" Tiled="true">
+        <RectColor A="255" R="255" G="255" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Coil" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>17</Width>
+        <Height>14</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>-2</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\coil\Coil.png" Tiled="true">
+        <RectColor A="255" R="128" G="64" B="64" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="IntValueDefinition" Name="impulse" Default="4" Min="0" Max="100" ShowSlider="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Treadmill" Limit="-1" ResizableX="true" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>32</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\treadmill\Treadmill.png" Tiled="true">
+        <RectColor A="255" R="128" G="128" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="EnumValueDefinition" Name="direction">
+          <Elements>
+            <string>right</string>
+            <string>left</string>
+          </Elements>
+        </ValueDefinition>
+        <ValueDefinition xsi:type="FloatValueDefinition" Name="speed" Default="2" Min="0" Max="100" Round="0.1" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="TrapDoor" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>18</Width>
+        <Height>32</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\trapDoor\Trapdoor.png" Tiled="true">
+        <RectColor A="255" R="0" G="0" B="204" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="opened" Default="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="DropPlatform" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>18</Width>
+        <Height>13</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\dropPlatform\DropPlatform.png" Tiled="true">
+        <RectColor A="255" R="128" G="128" B="192" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="LiftPlatform" Limit="-1" ResizableX="true" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>18</Width>
+        <Height>19</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>-2</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\liftPlaftorm\LiftPlatform.png" Tiled="true">
+        <RectColor A="255" R="0" G="128" B="128" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="MovingPlatform" Limit="-1" ResizableX="true" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>32</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\movingPlatform\MovingPlatform.png" Tiled="true">
+        <RectColor A="255" R="128" G="0" B="64" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="EnumValueDefinition" Name="type">
+          <Elements>
+            <string>path</string>
+            <string>circuit</string>
+          </Elements>
+        </ValueDefinition>
+        <ValueDefinition xsi:type="FloatValueDefinition" Name="speed" Default="2" Min="0" Max="100" Round="0.1" />
+        <ValueDefinition xsi:type="StringValueDefinition" Name="wait" Default="1" MaxChars="-1" MultiLine="false" />
+        <ValueDefinition xsi:type="IntValueDefinition" Name="trips" Default="-1" Min="-1" Max="100" ShowSlider="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="true" Limit="-1" DrawMode="Path" Ghost="true" />
+    </EntityDefinition>
+    <EntityDefinition Name="WallHook" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>-6</X>
+        <Y>-6</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\wallHook\WallHook.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="255" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Switches" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>10</Width>
+        <Height>17</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\switch\Switch.png" Tiled="true">
+        <RectColor A="255" R="255" G="128" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="StringValueDefinition" Name="wiredTo" Default="" MaxChars="-1" MultiLine="false" />
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="on" Default="false" />
+        <ValueDefinition xsi:type="FloatValueDefinition" Name="reset" Default="-1" Min="-1" Max="100" Round="0.1" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Timer" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
+        <RectColor A="255" R="128" G="255" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="FloatValueDefinition" Name="time" Default="0" Min="0" Max="100" Round="0.1" />
+        <ValueDefinition xsi:type="StringValueDefinition" Name="wiredTo" Default="" MaxChars="-1" MultiLine="false" />
+        <ValueDefinition xsi:type="EnumValueDefinition" Name="type">
+          <Elements>
+            <string>once</string>
+            <string>loop</string>
+            <string>reset</string>
+          </Elements>
+        </ValueDefinition>
+        <ValueDefinition xsi:type="FloatValueDefinition" Name="initial" Default="0" Min="0" Max="100" Round="0.1" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Jelly" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>-1</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\jelly\Jelly.png" Tiled="true">
+        <RectColor A="255" R="255" G="0" B="0" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="RetractablePlatform" Limit="-1" ResizableX="true" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
+        <RectColor A="255" R="0" G="112" B="112" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="retracted" Default="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Teleportal" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>32</Width>
+        <Height>32</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
+        <RectColor A="255" R="80" G="144" B="144" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="IntValueDefinition" Name="warpTo" Default="0" Min="0" Max="100" ShowSlider="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+  </EntityDefinitions>
+</project>

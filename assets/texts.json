@@ -1,0 +1,40 @@
+{
+	"failing":
+	{
+		"timeout":
+		[
+			"You lost the meeting.",
+			"You missed the elevator.",
+			"Your boss fired you for being late."
+		],
+		
+		"fall":
+		[
+			"You jumped for your death. Not kidding.",
+			"You felt in love... I mean, in the floor.",
+			"Gravity on Earth is around 9,81m/s. Now you know..."
+		],
+		
+		"crush":
+		[
+			"Seems someone have a crush on you.",
+			"This door was open. Was...",
+			"Something is close to you. On you. At you..."
+		]
+	},
+	
+	"succeeding":
+	{
+		"faster":
+		[
+			"The quick brown fox.",
+			"Look, is that a bird? A plane?"
+		],
+		
+		"slower":
+		[
+			"The lazy dog.",
+			"Your boss doesn't seems to be surprised to see you."
+		]
+	}
+}
