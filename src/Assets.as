@@ -242,6 +242,8 @@ package
 			public static const MAP_NEMO_01:Class;
 			[Embed(source="../assets/maps/nemo/02.oel",mimeType="application/octet-stream")]
 			public static const MAP_NEMO_02:Class;
+			[Embed(source="../assets/maps/nemo/03.oel",mimeType="application/octet-stream")]
+			public static const MAP_NEMO_03:Class;
 			//!
 		}
 	}

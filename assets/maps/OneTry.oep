@@ -16,7 +16,7 @@
     <Width>2000</Width>
     <Height>1200</Height>
   </LevelMaximumSize>
-  <Filename>C:\Users\Toth\Desktop\Toth\melon lord\SourBit\Workspace\Games\onetry\assets\maps\OneTry.oep</Filename>
+  <Filename>D:\Workspaces\Actionscript3.0\Games\OneTry\assets\maps\OneTry.oep</Filename>
   <AngleMode>Radians</AngleMode>
   <CameraEnabled>false</CameraEnabled>
   <CameraSize>
@@ -222,6 +222,38 @@
       </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
+    <EntityDefinition Name="WallHook" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Size>
+      <Origin>
+        <X>-6</X>
+        <Y>-6</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\wallHook\WallHook.png" Tiled="false">
+        <RectColor A="255" R="255" G="0" B="255" />
+      </ImageDefinition>
+      <ValueDefinitions />
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="TrapDoor" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>18</Width>
+        <Height>32</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\trapDoor\Trapdoor.png" Tiled="true">
+        <RectColor A="255" R="0" G="0" B="204" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="opened" Default="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
     <EntityDefinition Name="Treadmill" Limit="-1" ResizableX="true" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
         <Width>32</Width>
@@ -245,21 +277,19 @@
       </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
-    <EntityDefinition Name="TrapDoor" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+    <EntityDefinition Name="LiftPlatform" Limit="-1" ResizableX="true" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
         <Width>18</Width>
-        <Height>32</Height>
+        <Height>19</Height>
       </Size>
       <Origin>
         <X>0</X>
-        <Y>0</Y>
+        <Y>-2</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\props\trapDoor\Trapdoor.png" Tiled="true">
-        <RectColor A="255" R="0" G="0" B="204" />
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\liftPlaftorm\LiftPlatform.png" Tiled="true">
+        <RectColor A="255" R="0" G="128" B="128" />
       </ImageDefinition>
-      <ValueDefinitions>
-        <ValueDefinition xsi:type="BoolValueDefinition" Name="opened" Default="false" />
-      </ValueDefinitions>
+      <ValueDefinitions />
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
     <EntityDefinition Name="DropPlatform" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
@@ -273,21 +303,6 @@
       </Origin>
       <ImageDefinition DrawMode="Image" ImagePath="..\props\dropPlatform\DropPlatform.png" Tiled="true">
         <RectColor A="255" R="128" G="128" B="192" />
-      </ImageDefinition>
-      <ValueDefinitions />
-      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
-    </EntityDefinition>
-    <EntityDefinition Name="LiftPlatform" Limit="-1" ResizableX="true" ResizableY="false" Rotatable="false" RotateIncrement="15">
-      <Size>
-        <Width>18</Width>
-        <Height>19</Height>
-      </Size>
-      <Origin>
-        <X>0</X>
-        <Y>-2</Y>
-      </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\props\liftPlaftorm\LiftPlatform.png" Tiled="true">
-        <RectColor A="255" R="0" G="128" B="128" />
       </ImageDefinition>
       <ValueDefinitions />
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
@@ -317,19 +332,38 @@
       </ValueDefinitions>
       <NodesDefinition Enabled="true" Limit="-1" DrawMode="Path" Ghost="true" />
     </EntityDefinition>
-    <EntityDefinition Name="WallHook" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+    <EntityDefinition Name="RetractablePlatform" Limit="-1" ResizableX="true" ResizableY="false" Rotatable="false" RotateIncrement="15">
       <Size>
         <Width>16</Width>
-        <Height>16</Height>
+        <Height>8</Height>
       </Size>
       <Origin>
-        <X>-6</X>
-        <Y>-6</Y>
+        <X>0</X>
+        <Y>2</Y>
       </Origin>
-      <ImageDefinition DrawMode="Image" ImagePath="..\props\wallHook\WallHook.png" Tiled="false">
-        <RectColor A="255" R="255" G="0" B="255" />
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\retractablePlatform\RetractablePlatform.png" Tiled="true">
+        <RectColor A="255" R="0" G="112" B="112" />
       </ImageDefinition>
-      <ValueDefinitions />
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="BoolValueDefinition" Name="retracted" Default="false" />
+      </ValueDefinitions>
+      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
+    </EntityDefinition>
+    <EntityDefinition Name="Teleportal" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
+      <Size>
+        <Width>32</Width>
+        <Height>32</Height>
+      </Size>
+      <Origin>
+        <X>0</X>
+        <Y>0</Y>
+      </Origin>
+      <ImageDefinition DrawMode="Image" ImagePath="..\props\teleportal\Teleportal.png" Tiled="true">
+        <RectColor A="255" R="80" G="144" B="144" />
+      </ImageDefinition>
+      <ValueDefinitions>
+        <ValueDefinition xsi:type="IntValueDefinition" Name="warpTo" Default="0" Min="0" Max="100" ShowSlider="false" />
+      </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
     <EntityDefinition Name="Switches" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
@@ -338,7 +372,7 @@
         <Height>17</Height>
       </Size>
       <Origin>
-        <X>0</X>
+        <X>-3</X>
         <Y>0</Y>
       </Origin>
       <ImageDefinition DrawMode="Image" ImagePath="..\props\switch\Switch.png" Tiled="true">
@@ -390,40 +424,6 @@
         <RectColor A="255" R="255" G="0" B="0" />
       </ImageDefinition>
       <ValueDefinitions />
-      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
-    </EntityDefinition>
-    <EntityDefinition Name="RetractablePlatform" Limit="-1" ResizableX="true" ResizableY="false" Rotatable="false" RotateIncrement="15">
-      <Size>
-        <Width>16</Width>
-        <Height>16</Height>
-      </Size>
-      <Origin>
-        <X>0</X>
-        <Y>0</Y>
-      </Origin>
-      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
-        <RectColor A="255" R="0" G="112" B="112" />
-      </ImageDefinition>
-      <ValueDefinitions>
-        <ValueDefinition xsi:type="BoolValueDefinition" Name="retracted" Default="false" />
-      </ValueDefinitions>
-      <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
-    </EntityDefinition>
-    <EntityDefinition Name="Teleportal" Limit="-1" ResizableX="false" ResizableY="false" Rotatable="false" RotateIncrement="15">
-      <Size>
-        <Width>32</Width>
-        <Height>32</Height>
-      </Size>
-      <Origin>
-        <X>0</X>
-        <Y>0</Y>
-      </Origin>
-      <ImageDefinition DrawMode="Rectangle" ImagePath="" Tiled="false">
-        <RectColor A="255" R="80" G="144" B="144" />
-      </ImageDefinition>
-      <ValueDefinitions>
-        <ValueDefinition xsi:type="IntValueDefinition" Name="warpTo" Default="0" Min="0" Max="100" ShowSlider="false" />
-      </ValueDefinitions>
       <NodesDefinition Enabled="false" Limit="-1" DrawMode="None" Ghost="false" />
     </EntityDefinition>
   </EntityDefinitions>
