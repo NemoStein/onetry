@@ -25,10 +25,10 @@ package
 			Global.report = new ReportProxy("http://sourbit.com.br/api/reports/save.php");
 			
 			AssetLoader.load(function(map:Object):void
-				{
-					FlxG.mouse.load(map[Assets.CURSOR]);
-					replaceColor(FlxG.mouse.cursor.bitmapData, Global.TO_ALPHA, Global.NEW_ALPHA);
-				}, Assets.CURSOR);
+			{
+				FlxG.mouse.load(map[Assets.CURSOR]);
+				replaceColor(FlxG.mouse.cursor.bitmapData, Global.TO_ALPHA, Global.NEW_ALPHA);
+			}, Assets.CURSOR);
 		}
 		
 		private function replaceColor(bitmapData:BitmapData, oldColor:uint, newColor:uint):void
