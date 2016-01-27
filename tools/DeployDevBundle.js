@@ -1,20 +1,14 @@
 (function()
 {
 	
-	var projectPath = process.argv[2];
+	var projectPath = __dirname + "/..";
 	
 	var outputPath = projectPath + "/devBundle";
 	var outputBinPath = outputPath + "/bin";
 	var outputAssetsPath = outputPath + "/assets";
-	var outputMapsPath = outputAssetsPath + "/maps";
-	var outputPropsPath = outputAssetsPath + "/props";
 	
 	var inputSwfPath = projectPath + "/bin/OneTry.swf";
 	var inputAssetsPath = projectPath + "/assets";
-	var inputMapsPath = inputAssetsPath + "/maps";
-	var inputPropsPath = inputAssetsPath + "/props";
-	var inputLevelsPath = inputAssetsPath + "/levels.json";
-	var inputTextsPath = inputAssetsPath + "/texts.json";
 	
 	var fileSystem = require("fs");
 	
@@ -64,31 +58,11 @@
 	
 	// Creating output folder again
 	fileSystem.mkdirSync(outputPath);
-	fileSystem.mkdirSync(outputBinPath);
-	fileSystem.mkdirSync(outputAssetsPath);
 	
 	/****************************************************************************/
-	/*** Copying maps ***********************************************************/
+	/*** Copying assets *********************************************************/
 	
-	recurse(inputMapsPath, function(from)
-	{
-		var to = outputAssetsPath + from.substr(inputAssetsPath.length)
-		
-		if (fileSystem.statSync(from).isDirectory())
-		{
-			fileSystem.mkdirSync(to);
-		}
-		else
-		{
-			fileSystem.createReadStream(from).pipe(fileSystem.createWriteStream(to));
-		}
-		
-	}, false);
-	
-	/****************************************************************************/
-	/*** Copying props **********************************************************/
-	
-	recurse(inputPropsPath, function(from)
+	recurse(inputAssetsPath, function(from)
 	{
 		var to = outputAssetsPath + from.substr(inputAssetsPath.length)
 		
@@ -106,12 +80,7 @@
 	/****************************************************************************/
 	/*** Copying bin ************************************************************/
 	
+	fileSystem.mkdirSync(outputBinPath);
 	fileSystem.createReadStream(inputSwfPath).pipe(fileSystem.createWriteStream(outputBinPath + "/OneTry.swf"));
-	
-	/****************************************************************************/
-	/*** Copying jsons **********************************************************/
-	
-	fileSystem.createReadStream(inputLevelsPath).pipe(fileSystem.createWriteStream(outputAssetsPath + "/levels.json"));
-	fileSystem.createReadStream(inputTextsPath).pipe(fileSystem.createWriteStream(outputAssetsPath + "/texts.json"));
 	
 })();

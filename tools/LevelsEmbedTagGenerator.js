@@ -1,7 +1,7 @@
 (function()
 {
 	
-	var projectPath = process.argv[2];
+	var projectPath = __dirname + "/..";
 	
 	var levelsPath = projectPath + "/assets/levels.json";
 	var assetsPath = projectPath + "/src/assets.as";

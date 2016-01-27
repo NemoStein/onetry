@@ -5,14 +5,14 @@
 	var MINOR = "-minor";
 	var PATCH = "-patch";
 	
-	var mode = process.argv[3];
+	var mode = process.argv[2];
 	
 	if (mode != MAJOR && mode != MINOR && mode != PATCH)
 	{
 		throw "Mode " + mode + " wasn't recognized.\nUse \"" + MAJOR + "\", \"" + MINOR + "\" or \"" + PATCH + "\".";
 	}
 	
-	var projectPath = process.argv[2];
+	var projectPath = __dirname + "/..";
 	var versionPath = projectPath + "/assets/version";
 	
 	var fileSystem = require("fs");
