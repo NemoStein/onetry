@@ -22,20 +22,20 @@
 	// Timer/TrapDoor intro levels
 	"timer/under",
 	
+	// Nemo tests
+	"nemo/01",
+	"nemo/02",
+	//"nemo/03",
+	
 	// Greg tests
 	"greg/01",
-	"greg/02",
+	//"greg/02",
 	"greg/03",
 	"greg/04",
 	"greg/05",
 	"greg/06",
 	"greg/07",
 	"greg/08",
-	
-	// Nemo tests
-	"nemo/01",
-	"nemo/02",
-	"nemo/03",
 	
 	/*
 		DON'T REMOVE THIS LINE!!

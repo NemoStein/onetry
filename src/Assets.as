@@ -222,10 +222,12 @@ package
 			public static const MAP_TREADMILL_MERRY:Class;
 			[Embed(source="../assets/maps/timer/under.oel",mimeType="application/octet-stream")]
 			public static const MAP_TIMER_UNDER:Class;
+			[Embed(source="../assets/maps/nemo/01.oel",mimeType="application/octet-stream")]
+			public static const MAP_NEMO_01:Class;
+			[Embed(source="../assets/maps/nemo/02.oel",mimeType="application/octet-stream")]
+			public static const MAP_NEMO_02:Class;
 			[Embed(source="../assets/maps/greg/01.oel",mimeType="application/octet-stream")]
 			public static const MAP_GREG_01:Class;
-			[Embed(source="../assets/maps/greg/02.oel",mimeType="application/octet-stream")]
-			public static const MAP_GREG_02:Class;
 			[Embed(source="../assets/maps/greg/03.oel",mimeType="application/octet-stream")]
 			public static const MAP_GREG_03:Class;
 			[Embed(source="../assets/maps/greg/04.oel",mimeType="application/octet-stream")]
@@ -238,12 +240,6 @@ package
 			public static const MAP_GREG_07:Class;
 			[Embed(source="../assets/maps/greg/08.oel",mimeType="application/octet-stream")]
 			public static const MAP_GREG_08:Class;
-			[Embed(source="../assets/maps/nemo/01.oel",mimeType="application/octet-stream")]
-			public static const MAP_NEMO_01:Class;
-			[Embed(source="../assets/maps/nemo/02.oel",mimeType="application/octet-stream")]
-			public static const MAP_NEMO_02:Class;
-			[Embed(source="../assets/maps/nemo/03.oel",mimeType="application/octet-stream")]
-			public static const MAP_NEMO_03:Class;
 			//!
 		}
 	}
