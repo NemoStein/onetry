@@ -1,0 +1,84 @@
+var path = require('path');
+var fs = require('fs');
+
+console.log('');
+console.log('VersionBumper by NemoStein');
+console.log('');
+
+var regex = {
+	help: /^(--help|-h)$/,
+	major: /^(--major|-M)$/,
+	minor: /^(--minor|-m)$/,
+	patch: /^(--patch|-p)$/
+};
+
+var mode = process.argv[2];
+
+if (!mode)
+{
+	mode = 'help';
+}
+
+if (regex.help.test(mode))
+{
+	console.log('usage: vbump [option]');
+	console.log('options:');
+	console.log('	-h, --help		This help');
+	console.log('	-M, --major		Bumps the major version (x.0.0)');
+	console.log('	-m, --minor		Bumps the minor version (0.x.0)');
+	console.log('	-p, --patch		Bumps the patch version (0.0.x)');
+	console.log('');
+	console.log('Bumping increments the part and set the next to zero.');
+	console.log('E.g.: With version 2.7.12, passing -m (or minor) sets the version to 2.8.0');
+
+	process.exit()
+}
+else if (!regex.major.test(mode) && !regex.minor.test(mode) && !regex.patch.test(mode))
+{
+	console.log('Mode "' + mode + '" wasn\'t recognized.');
+	console.log('Try -h for help.');
+	process.exit(1);
+}
+
+var projectPath = path.join(__dirname, '/../..');
+var versionPath = path.join(projectPath, '/assets/version');
+
+fs.readFile(versionPath, { encoding: 'utf-8' }, function(error, data)
+{
+	if (error)
+	{
+		throw error;
+	}
+	
+	var oldVersion = data;
+	var parts = oldVersion.split('.');
+
+	if (regex.major.test(mode))
+	{
+		parts[0] = parseInt(parts[0]) + 1;
+		parts[1] = 0;
+		parts[2] = 0;
+	}
+	else if (regex.minor.test(mode))
+	{
+		parts[1] = parseInt(parts[1]) + 1;
+		parts[2] = 0;
+	}
+	else if (regex.patch.test(mode))
+	{
+		parts[2] = parseInt(parts[2]) + 1;
+	}
+
+	var newVersion = parts.join('.');
+
+	fs.writeFile(versionPath, newVersion, function(error, data)
+	{
+		if (error)
+		{
+			throw error;
+		}
+		
+		console.log('Bumped from v' + oldVersion + ' to version v' + newVersion);
+	});
+});
+
