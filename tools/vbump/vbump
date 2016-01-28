@@ -29,7 +29,7 @@ if (regex.help.test(mode))
 	console.log('	-p, --patch		Bumps the patch version (0.0.x)');
 	console.log('');
 	console.log('Bumping increments the part and set the next to zero.');
-	console.log('E.g.: With version 2.7.12, passing -m (or minor) sets the version to 2.8.0');
+	console.log('E.g.: With version 2.7.12, passing -m (or --minor) sets the version to 2.8.0');
 
 	process.exit()
 }
