@@ -46,7 +46,7 @@
     <option loadExterns="" />
     <option staticLinkRSL="True" />
     <option additional="" />
-    <option compilerConstants="SOURBIT::mute,false" />
+    <option compilerConstants="SOURBIT::mute,true" />
     <option minorVersion="" />
   </build>
   <!-- SWC Include Libraries -->
@@ -86,7 +86,7 @@
     <hidden path="obj" />
   </hiddenPaths>
   <!-- Executed before build -->
-  <preBuildCommand>node "$(ProjectDir)\tools\LevelsEmbedTagGenerator.js"</preBuildCommand>
+  <preBuildCommand />
   <!-- Executed after build -->
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->
