@@ -25,11 +25,11 @@
 	// Nemo tests
 	"nemo/01",
 	"nemo/02",
-	//"nemo/03",
+	"nemo/03",
 	
 	// Greg tests
 	"greg/01",
-	//"greg/02",
+	"greg/02",
 	"greg/03",
 	"greg/04",
 	"greg/05",
