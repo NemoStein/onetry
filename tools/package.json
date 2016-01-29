@@ -1,0 +1,17 @@
+{
+	"name": "tools",
+	"version": "0.3.3",
+	"description": "Tools that ease the OneTry assets management and shit!",
+	"main": "index.js",
+	"author":
+	{
+		"name": "NemoStein",
+		"email": "contato@nemostein.com.br"
+	},
+
+	"dependencies":
+	{
+		"docopt": "~0.6.2",
+		"xml2js": "~0.4.16"
+	}
+}
