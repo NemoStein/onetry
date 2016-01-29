@@ -4,6 +4,7 @@ var xml2js = require('xml2js');
 var util = require('util');
 
 var mapsPath;
+var margin;
 var fileCount = 0;
 var fileProcessed = 0;
 
@@ -202,10 +203,10 @@ var manipulate = function(filename)
 				};
 			};
 			
-			bounds.top -= 2;
-			bounds.right += 3;
-			bounds.bottom += 3;
-			bounds.left -= 2;
+			bounds.top -= margin;
+			bounds.right += margin + 1;
+			bounds.bottom += margin + 1;
+			bounds.left -= margin;
 			
 			var width = (bounds.right - bounds.left) * 16;
 			var height = (bounds.bottom - bounds.top) * 16;
@@ -254,7 +255,7 @@ var manipulate = function(filename)
 				
 				//console.log('Processed map: ' + filename.replace(mapsPath, '').replace(/\\/g, '/').slice(1, -4));
 				--fileCount;
-
+				
 				if (fileCount <= 0)
 				{
 					report();
@@ -283,7 +284,7 @@ var walk = function(filename)
 				{
 					throw error;
 				}
-
+				
 				if (stat.isDirectory())
 				{
 					walk(currentPath);
@@ -306,7 +307,8 @@ module.exports = function(args, basepath)
 {
 	console.log('Map Cropper by NemoStein');
 	
-	mapsPath = path.join(basepath, '/assets/maps')
+	margin = parseInt(args['--margin']);
+	mapsPath = path.join(basepath, '/assets/maps');
 	var filename;
 	
 	if (args['<map>'])
