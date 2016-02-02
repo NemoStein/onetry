@@ -68,11 +68,16 @@ package sourbit.games.onetry.props.treadmill
 				
 				var leftFrames:Array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 				var middleFrames:Array = [16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+				var middleVariationFrames:Array = [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47];
 				var rightFrames:Array = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 61, 62];
 				
 				piece.addAnimation("left", _direction == RIGHT ? leftFrames :leftFrames.reverse(), speed, true);
 				piece.addAnimation("middle", _direction == RIGHT ? middleFrames : middleFrames.reverse(), speed, true);
+				piece.addAnimation("middleVariation", _direction == RIGHT ? middleVariationFrames : middleVariationFrames.reverse(), speed, true);
 				piece.addAnimation("right", _direction == RIGHT ? rightFrames : rightFrames.reverse(), speed, true);
+				
+				var middle:int = totalPieces / 2;
+				var between:int = middle % 3;
 				
 				if (i == 0)
 				{
@@ -86,8 +91,16 @@ package sourbit.games.onetry.props.treadmill
 				}
 				else
 				{
-					piece.play("middle");
-					piece.allowCollisions = FlxObject.CEILING;
+					if (i % 3 == between)
+					{
+						piece.play("middleVariation");
+						piece.allowCollisions = FlxObject.CEILING;	
+					}
+					else
+					{
+						piece.play("middle");
+						piece.allowCollisions = FlxObject.CEILING;	
+					}
 				}
 				
 				_pieces.add(piece);
