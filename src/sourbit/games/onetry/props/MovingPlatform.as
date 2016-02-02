@@ -286,7 +286,7 @@ package sourbit.games.onetry.props
 				entity.addAnimation("right", [6, 7, 8], 12);
 				
 				var middle:int = totalPieces / 2;
-				var correction:int = totalPieces / 2 % 2 == 0 ? 1 : 0;
+				var correction:int = totalPieces % 2 == 0 ? 1 : 0;
 				var between:int = (middle + correction) % 3;
 				
 				if (i == 0)
