@@ -279,9 +279,15 @@ package sourbit.games.onetry.props
 				entity.width = 16;
 				entity.height = 16;
 				
-				entity.addAnimation("left", [0,1,2], 12);
-				entity.addAnimation("middle", [3,3,3], 12);
+				entity.addAnimation("left", [0, 1, 2], 12);
+				entity.addAnimation("middle", [3], 12);
+				entity.addAnimation("middleVariation", [4], 12);
+				entity.addAnimation("middleDivisor", [5], 12);
 				entity.addAnimation("right", [6, 7, 8], 12);
+				
+				var middle:int = totalPieces / 2;
+				var correction:int = totalPieces / 2 % 2 == 0 ? 1 : 0;
+				var between:int = (middle + correction) % 3;
 				
 				if (i == 0)
 				{
@@ -293,7 +299,14 @@ package sourbit.games.onetry.props
 				}
 				else
 				{
-					entity.play("middle");
+					if (totalPieces > 4 && i % 3 == between)
+					{
+						entity.play("middleDivisor");
+					}
+					else
+					{
+						entity.play("middle");
+					}
 				}
 				
 				_pieces.push( entity );
