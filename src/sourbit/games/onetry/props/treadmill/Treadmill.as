@@ -92,7 +92,7 @@ package sourbit.games.onetry.props.treadmill
 				}
 				else
 				{
-					if (i % 3 == between)
+					if (totalPieces > 4 && i % 3 == between)
 					{
 						piece.play("middleVariation");
 						piece.allowCollisions = FlxObject.CEILING;	
