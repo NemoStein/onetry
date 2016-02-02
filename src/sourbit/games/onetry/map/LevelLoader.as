@@ -714,16 +714,13 @@ package sourbit.games.onetry.map
 		
 		static public function reloadCurrent():void
 		{
+			var path:String = Global.levelsReferences[Global.currentLevel];
+			
 			AssetLoader.load( function(map:Object):void
 			{
-				for (var s:String in map)
-				{
-					Global.assetsHolder[s] = map[s];
-				}
+				Global.levels[Global.currentLevel] = Global.assetsHolder[path] = map[path];
 				
-				Global.levels[Global.currentLevel] = Global.assetsHolder[s];
-				
-			},Global.levelsReferences[Global.currentLevel]);
+			}, path);
 		}
 	}
 }
