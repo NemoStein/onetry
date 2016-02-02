@@ -149,13 +149,13 @@
     <Treadmill id="9" x="192" y="224" width="160" direction="right" speed="5" />
     <Exit id="1" x="448" y="192" />
     <Key id="5" x="96" y="200" />
-    <Treadmill id="4" x="64" y="336" width="32" direction="right" speed="2" />
-    <Treadmill id="10" x="112" y="336" width="48" direction="right" speed="2" />
-    <Treadmill id="11" x="176" y="336" width="64" direction="right" speed="2" />
-    <Treadmill id="12" x="256" y="336" width="80" direction="right" speed="2" />
-    <Treadmill id="13" x="352" y="336" width="96" direction="right" speed="2" />
-    <Treadmill id="14" x="64" y="304" width="112" direction="right" speed="2" />
-    <Treadmill id="15" x="192" y="304" width="128" direction="right" speed="2" />
-    <Treadmill id="16" x="336" y="304" width="144" direction="right" speed="2" />
+    <MovingPlatform id="4" x="64" y="336" width="32" direction="right" speed="2" />
+    <MovingPlatform id="10" x="112" y="336" width="48" direction="right" speed="2" />
+    <MovingPlatform id="11" x="176" y="336" width="64" direction="right" speed="2" />
+    <MovingPlatform id="12" x="256" y="336" width="80" direction="right" speed="2" />
+    <MovingPlatform id="13" x="352" y="336" width="96" direction="right" speed="2" />
+    <MovingPlatform id="14" x="64" y="304" width="112" direction="right" speed="2" />
+    <MovingPlatform id="15" x="192" y="304" width="128" direction="right" speed="2" />
+    <MovingPlatform id="16" x="336" y="304" width="144" direction="right" speed="2" />
   </Props>
 </level>
