@@ -179,7 +179,7 @@ package sourbit.games.onetry.props
 			
 			super(id, x, y);
 			
-			var mode:uint = _type == CIRCUIT ?FlxObject.PATH_LOOP_FORWARD : FlxObject.PATH_YOYO;
+			var mode:uint = _type == CIRCUIT ? FlxObject.PATH_LOOP_FORWARD : FlxObject.PATH_YOYO;
 			
 			_path = new FlxPath(_nodes);
 			followPath(_path, _speed, mode);
@@ -305,11 +305,18 @@ package sourbit.games.onetry.props
 					}
 					else
 					{
-						entity.play("middle");
+						if (FlxG.random() > 0.75)
+						{
+							entity.play("middleVariation");
+						}
+						else
+						{
+							entity.play("middle");	
+						}
 					}
 				}
 				
-				_pieces.push( entity );
+				_pieces.push(entity);
 			}
 		}
 		
@@ -333,16 +340,16 @@ package sourbit.games.onetry.props
 		
 		override public function postUpdate():void 
 		{
+			super.postUpdate();
+			
 			var i:int = -1;
-			while ( ++i < _pieces.length)
+			while (++i < _pieces.length)
 			{
 				_pieces[i].y = y;
-				_pieces[i].x = x + ( i * Global.TILE_SIDE);
+				_pieces[i].x = x + (i * Global.TILE_SIDE);
 				
 				_pieces[i].postUpdate();
 			}
-			
-			super.postUpdate();
 		}
 		
 		/* INTERFACE sourbit.games.onetry.props.switches.Wired */
