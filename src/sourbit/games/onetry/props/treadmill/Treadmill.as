@@ -76,8 +76,9 @@ package sourbit.games.onetry.props.treadmill
 				piece.addAnimation("middleVariation", _direction == RIGHT ? middleVariationFrames : middleVariationFrames.reverse(), speed, true);
 				piece.addAnimation("right", _direction == RIGHT ? rightFrames : rightFrames.reverse(), speed, true);
 				
-				var middle:int = totalPieces / 2;
-				var between:int = middle % 3;
+				var middle:int = totalPieces  / 2;
+				var correction:int = totalPieces % 2 == 0 ? 1 : 0
+				var between:int = (middle + correction) % 3;
 				
 				if (i == 0)
 				{
