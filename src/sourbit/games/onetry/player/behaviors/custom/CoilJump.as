@@ -18,6 +18,10 @@ package sourbit.games.onetry.player.behaviors.custom
 			
 			chainBehavior = "FreeMovement";
 			
+			user.onGround = false;
+			user.graceTimer = 0;
+			user.offLedgeTimer = 0;
+			
 			user.y = coil.y - user.height;
 			user.velocity.y = -coil.impulse;
 			user.jumpTimer = -1;
