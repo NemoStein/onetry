@@ -84,7 +84,6 @@ package sourbit.games.onetry.player.behaviors.custom
 				
 				if (user.y + user.height < treadmill.y - 5 || user.y + user.height > treadmill.y + treadmill.height || user.x + user.width <= treadmill.x || user.x >= treadmill.x + treadmill.width)
 				{
-					grabbed = false;
 					end();
 				}
 				
@@ -193,12 +192,10 @@ package sourbit.games.onetry.player.behaviors.custom
 					return;
 				}
 				
-				var d:int = treadmill.direction == Treadmill.LEFT ? 1 : -1;
-				
 				user.y = treadmill.y + treadmill.height - 2;
 				user.last.y = user.y;
 				
-				user.velocity.x += (force * d);
+				user.velocity.x += (force * (direction * -1));
 			}
 			
 			if (!grabbed)
@@ -262,22 +259,10 @@ package sourbit.games.onetry.player.behaviors.custom
 					user.play("landing");
 				}
 				
-				if (user.curAnim.name == "idleL" || user.curAnim.name == "idleR")
+				var offset:Number = user.velocity.x * FlxG.elapsed;
+				if(user.curAnim.name == "walkR" || user.curAnim.name == "walkL")
 				{
-					if (!_dummy.overlapsAt( user.x + ((force * direction) * FlxG.elapsed), user.y + 8, Global.groundMap, true))
-					{
-						if (user.height == user.standHeight)
-						{
-							user.height = user.crouchHeight;
-							user.offset.y = user.crouchOffsetY;
-							
-							user.y += (user.crouchOffsetY - user.standOffsetY);
-						}
-					}
-				}
-				else
-				{
-					if (!user.overlapsAt( user.x, user.y - 1, Global.groundMap, true))
+					if (!_dummy.overlapsAt( user.x, user.y - 1, Global.groundMap))
 					{
 						if (user.height == user.crouchHeight)
 						{
@@ -285,13 +270,27 @@ package sourbit.games.onetry.player.behaviors.custom
 							user.offset.y = user.standOffsetY;
 							
 							user.y -= (user.crouchOffsetY - user.standOffsetY);
-							user.velocity.x += (force * direction);
+							user.last.y = user.y;
 						}
 					}
 					else
 					{
 						user.play("idle");
 						user.velocity.x = (force * direction);
+					}
+				}
+				if (user.curAnim.name == "idleL" || user.curAnim.name == "idleR")
+				{
+					if (!_dummy.overlapsAt( user.x + offset, user.y + 8, Global.groundMap))
+					{
+						if (user.height == user.standHeight)
+						{
+							user.height = user.crouchHeight;
+							user.offset.y = user.crouchOffsetY;
+							
+							user.y += (user.crouchOffsetY - user.standOffsetY);
+							user.last.y = user.y;
+						}
 					}
 				}
 			}
