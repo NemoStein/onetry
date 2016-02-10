@@ -149,9 +149,12 @@ package sourbit.games.onetry.player.behaviors.custom
 						user.jumpTimer = -1;
 					}
 					
-					if (user.jumpTimer > 0)
-					{	
-						user.velocity.y = -user.jumpSpeed;
+					if (!_dummy.overlapsAt( user.x, user.y - 1, Global.groundMap))
+					{
+						if (user.jumpTimer > 0)
+						{	
+							user.velocity.y = -user.jumpSpeed;
+						}
 					}
 				}
 			}
