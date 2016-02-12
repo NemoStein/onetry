@@ -45,12 +45,12 @@ package sourbit.games.onetry.player
 		
 		public var keyMap:Object =
 		{
-			left :["LEFT", "A"],
-			right :["RIGHT", "D"],
-			down:["DOWN", "S"],
-			jump :["UP", "W", "SPACE", "C"],
-			action : ["X", "SHIFT"],
-			any : ["LEFT","A","RIGHT","D","UP","W","SPACE","X","SHIFT","Z","C"]
+			left :["LEFT"],
+			right :["RIGHT"],
+			down:["DOWN"],
+			jump :["UP","C"],
+			action : ["X"],
+			any : ["LEFT","RIGHT","UP","SPACE","X","C"]
 		};
 		
 		public function Player(x:int,y:int) 
