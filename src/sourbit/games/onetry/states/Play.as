@@ -120,24 +120,24 @@ package sourbit.games.onetry.states
 				}
 			}
 			
-			if (FlxG.keys.justPressed("M"))
+			if (Global.menuMute())
 			{
 				Global.hud.toggle();
 			}
 			
 			CONFIG::debug
 			{
-				if (FlxG.keys.justPressed("G"))
+				if (Global.menuDebugGodMode())
 				{
 					Global.god = !Global.god;
 				}
 				
-				if (FlxG.keys.justPressed("B"))
+				if (Global.menuDebugShowCollision())
 				{
 					FlxG.visualDebug = !FlxG.visualDebug;
 				}
 				
-				if (FlxG.keys.justPressed("K"))
+				if (Global.menuDebugBeatLevel())
 				{
 					Global.complete = true;
 					Global.completeCheated = true;
@@ -145,14 +145,14 @@ package sourbit.games.onetry.states
 			}
 			
 			
-			if (FlxG.keys.justPressed("R") && (!Global.levelComplete && !Global.lost) && !FlxG.paused)
+			if (Global.menuRestart() && (!Global.levelComplete && !Global.lost) && !FlxG.paused)
 			{
 				Global.report.record("levelRestartByR", Global.levelsIDs[Global.currentLevel]).save();
 				
 				FlxG.switchState(new Play([Global.currentLevel, false]));
 			}
 			
-			if (FlxG.keys.justPressed("X") && LevelLoader.spawnGroup.members[0].animating)
+			if (Global.menuAccept()&& LevelLoader.spawnGroup.members[0].animating)
 			{
 				if (LevelLoader.spawnGroup.members[0].animating)
 				{
@@ -161,7 +161,7 @@ package sourbit.games.onetry.states
 				}
 			}
 			
-			if ((FlxG.keys.justPressed("ESCAPE") || FlxG.keys.justPressed("P")) && (!Global.levelComplete && !Global.lost))
+			if (Global.menuPause() && (!Global.levelComplete && !Global.lost))
 			{
 				if (LevelLoader.spawnGroup.members[0].animating)
 				{
