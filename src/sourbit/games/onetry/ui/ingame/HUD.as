@@ -71,18 +71,16 @@ package sourbit.games.onetry.ui.ingame
 				_sfx.status = FlxButton.NORMAL;
 				_sfx.frame = FlxButton.NORMAL;
 			}
-			if (Global.musicSequence)
+			
+			if (Global.musicSequence.mute)
 			{
-				if (!Global.musicSequence.active)
-				{
-					_bgm.status = FlxButton.PRESSED;
-					_bgm.frame = FlxButton.PRESSED;
-				}
-				else
-				{
-					_bgm.status = FlxButton.NORMAL;
-					_bgm.frame = FlxButton.NORMAL;
-				}
+				_bgm.status = FlxButton.PRESSED;
+				_bgm.frame = FlxButton.PRESSED;
+			}
+			else
+			{
+				_bgm.status = FlxButton.NORMAL;
+				_bgm.frame = FlxButton.NORMAL;
 			}
 		}
 		
@@ -116,13 +114,13 @@ package sourbit.games.onetry.ui.ingame
 		{
 			if (Global.musicSequence)
 			{
-				if (Global.musicSequence.active)
+				if (Global.musicSequence.mute)
 				{
-					Global.musicSequence.pause();
+					Global.musicSequence.resume();
 				}
 				else
 				{
-					Global.musicSequence.resume();
+					Global.musicSequence.pause();
 				}
 			}
 		}
