@@ -27,7 +27,7 @@ package sourbit.games.onetry.states
 	import sourbit.games.onetry.props.WallHook;
 	import sourbit.games.onetry.scenes.LevelComplete;
 	import sourbit.games.onetry.scenes.Pause;
-	import sourbit.games.onetry.sonds.SoundSequence;
+	import sourbit.games.onetry.sonds.SoundSequencePlayer;
 	
 	public class Play extends FlxState
 	{
@@ -44,6 +44,8 @@ package sourbit.games.onetry.states
 		private var _started:Boolean;
 		private var _waiting:int;
 		
+		private var _soundSequenceName:String = "gameplay";
+		
 		public function Play(... args:Array)
 		{
 			Global.currentLevel = args[0][0];
@@ -52,16 +54,15 @@ package sourbit.games.onetry.states
 			_started = false;
 			_intro = args[0][1];
 			
-			if (!Global.musicSequence || Global.musicSequence.sequenceName != "gameplay")
+			if (!Global.musicSequence.hasSequence(_soundSequenceName))
 			{
-				Global.musicSequence = new SoundSequence("gameplay");
-				
-				Global.musicSequence.add(gameplay1_intro, false);
-				Global.musicSequence.add(gameplay1_loop, false);
-				Global.musicSequence.add(gameply1_loop2, true);
-				
-				Global.musicSequence.start();
+				Global.musicSequence.addSound(_soundSequenceName, gameplay1_intro);
+				Global.musicSequence.addSound(_soundSequenceName, gameplay1_loop);
+				Global.musicSequence.addSound(_soundSequenceName, gameply1_loop2);
 			}
+			
+			if(!Global.musicSequence.isPlayingSequence(_soundSequenceName))
+				Global.musicSequence.start(_soundSequenceName);
 		}
 		
 		override public function create():void
@@ -190,6 +191,7 @@ package sourbit.games.onetry.states
 			if (FlxG.paused)
 			{
 				Global.pause.update();
+				Global.hud.update();
 				
 				return;
 			}
@@ -202,6 +204,7 @@ package sourbit.games.onetry.states
 				
 				Global.layer5.add(Global.levelComplete);
 				Global.levelComplete.update();
+				Global.hud.update();
 				
 				return;
 			}
@@ -214,6 +217,7 @@ package sourbit.games.onetry.states
 				
 				Global.layer5.add(Global.levelFailed);
 				Global.levelFailed.update();
+				Global.hud.update();
 				
 				return;
 				

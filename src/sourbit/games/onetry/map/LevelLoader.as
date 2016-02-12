@@ -246,7 +246,7 @@ package sourbit.games.onetry.map
 			
 			//HUD
 			Global.hud = new HUD();
-			Global.layer4.add(Global.hud);
+			Global.layer6.add(Global.hud);
 			
 			Global.layer1.add(Global.backGroundMap);
 			Global.layer1.add(Global.groundMap);

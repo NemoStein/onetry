@@ -1,89 +1,64 @@
-package sourbit.games.onetry.sonds
+package sourbit.games.onetry.sonds 
 {
-	import flash.events.Event;
-	import org.flixel.FlxG;
-	import org.flixel.FlxSound;
-	import org.flixel.FlxSoundUnmutable;
-	
-	public class SoundSequence extends FlxSoundUnmutable
-	{
+	/**
+	 * ...
+	 * @author Melon Lord
+	 */
+	public class SoundSequence 
+	{		
 		private var _sequence:Vector.<Class>;
-		private var _loopClass:Class;
+		private var _current:Class;
+		private var _name:String;
 		
-		private var _sequenceName:String;
+		public function get name():String
+		{
+			return _name;
+		}
 		
-		private var _paused:Boolean;
+		public function get isLast():Boolean
+		{
+			return _current == _sequence[_sequence.length - 1];
+		}
 		
 		public function SoundSequence(name:String) 
 		{
-			super();
-			
-			_sequenceName = name;
-			
-			survive = true;
-			autoDestroy = false;
-			
+			_name = name;
+			clear();
+		}
+		
+		public function clear():void
+		{
 			_sequence = new Vector.<Class>();
 		}
 		
-		public function add(embedClass:Class,loop:Boolean=false):void
+		public function add(sound:Class):void
 		{
-			_sequence.push(embedClass);
-			
-			if (loop)
+			_sequence.push(sound);
+		}
+		
+		public function next():Class
+		{
+			if (_current == null)
 			{
-				_loopClass = embedClass;
+				_current = _sequence[0];
+				return _current;
 			}
-		}
-		
-		public function start():void
-		{
-			if (_sequence.length > 0)
-			{
-				createSound();
-				
-				var next:Class = _sequence.shift();
-				loadEmbedded(next, next == _loopClass);
-				play();
-				
-				if (_paused)
-				{
-					volume = 0;
-					active = false;
-				}
-			}
-		}
-		
-		override public function pause():void 
-		{
-			volume = 0;
 			
-			active = false;
-			_paused = true;
-		}
-		
-		override public function resume():void 
-		{
-			volume = 1;
+			var index:int = _sequence.indexOf(_current);
 			
-			active = true;
-			_paused = false;
-		}
-		
-		override protected function stopped(event:Event = null):void 
-		{
-			super.stopped(event);
-			if (event != null)
+			if (index + 1 < _sequence.length)
 			{
-				start();
+				_current + _sequence[index + 1];
+				return _current;
 			}
+			
+			return null;
 		}
 		
-		public function get sequenceName():String 
+		public function reset():void 
 		{
-			return _sequenceName;
+			_current = null;
 		}
 		
 	}
-
 }

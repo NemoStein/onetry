@@ -7,7 +7,7 @@ package
 	import sourbit.games.onetry.player.Player;
 	import sourbit.games.onetry.scenes.LevelComplete;
 	import sourbit.games.onetry.scenes.Pause;
-	import sourbit.games.onetry.sonds.SoundSequence;
+	import sourbit.games.onetry.sonds.SoundSequencePlayer;
 	import sourbit.games.onetry.states.LevelFailed;
 	import sourbit.games.onetry.ui.ingame.HUD;
 	
@@ -70,7 +70,7 @@ package
 		
 		public static var report:ReportProxy;
 		
-		public static var musicSequence:SoundSequence;
+		public static var musicSequence:SoundSequencePlayer;
 		
 		
 		static public function menuMoveUp():Boolean

@@ -14,6 +14,7 @@ package sourbit.games.onetry.states
 	import org.flixel.FlxText;
 	import org.flixel.FlxU;
 	import sourbit.games.onetry.map.LevelLoader;
+	import sourbit.games.onetry.sonds.SoundSequencePlayer;
 	import sourbit.games.onetry.ui.BasicButton;
 	import sourbit.games.onetry.ui.ingame.HUD;
 	
@@ -161,6 +162,9 @@ package sourbit.games.onetry.states
 			
 			setNavigationType(NORMAL);
 			
+			if(Global.musicSequence == null)
+				Global.musicSequence = new SoundSequencePlayer();
+				
 			Global.hud = new HUD();
 			
 			add(_clouds);
