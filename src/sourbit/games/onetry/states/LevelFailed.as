@@ -114,7 +114,7 @@ package sourbit.games.onetry.states
 				currentButton.onOver();
 			}
 			
-			if (FlxG.keys.justPressed("W") || FlxG.keys.justPressed("UP"))
+			if (Global.menuMoveUp())
 			{
 				currentButton.onOut();
 				
@@ -126,7 +126,7 @@ package sourbit.games.onetry.states
 				
 				FlxG.play(overSFX);
 			}
-			else if (FlxG.keys.justPressed("S") || FlxG.keys.justPressed("DOWN"))
+			else if (Global.menuMoveDown())
 			{
 				currentButton.onOut();
 				
@@ -136,7 +136,7 @@ package sourbit.games.onetry.states
 				FlxG.play(overSFX);
 			}
 			
-			if (FlxG.keys.justPressed("SPACE") || FlxG.keys.justPressed("X") || FlxG.keys.justPressed("ENTER"))
+			if (Global.menuAccept())
 			{
 				currentButton.onUp();
 				FlxG.play(PressSFX);

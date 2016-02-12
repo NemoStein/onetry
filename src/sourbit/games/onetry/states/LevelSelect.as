@@ -237,7 +237,7 @@ package sourbit.games.onetry.states
 		
 		override public function update():void 
 		{
-			if (FlxG.keys.justPressed("M"))
+			if (Global.menuMute())
 			{
 				Global.hud.toggle();
 			}

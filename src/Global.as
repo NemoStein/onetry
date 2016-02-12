@@ -1,6 +1,7 @@
 package
 {
 	import org.flixel.FlxCamera;
+	import org.flixel.FlxG;
 	import org.flixel.FlxGroup;
 	import org.flixel.FlxTilemap;
 	import sourbit.games.onetry.player.Player;
@@ -70,5 +71,51 @@ package
 		public static var report:ReportProxy;
 		
 		public static var musicSequence:SoundSequence;
+		
+		
+		static public function menuMoveUp():Boolean
+		{
+			return (FlxG.keys.justPressed("UP"))
+		}
+		
+		static public function menuMoveDown():Boolean
+		{
+			return (FlxG.keys.justPressed("DOWN"))
+		}
+		
+		static public function menuAccept():Boolean
+		{
+			return (FlxG.keys.justPressed("X") || FlxG.keys.justPressed("C"))
+		}
+		
+		static public function menuRestart():Boolean
+		{
+			return (FlxG.keys.justPressed("R"));
+		}
+		
+		static public function menuPause():Boolean
+		{
+			return (FlxG.keys.justPressed("ESCAPE") || FlxG.keys.justPressed("P"));
+		}
+		
+		static public function menuMute():Boolean
+		{
+			return (FlxG.keys.justPressed("M"));
+		}
+		
+		static public function menuDebugGodMode():Boolean
+		{
+			return (FlxG.keys.justPressed("G"));
+		}
+		
+		static public function menuDebugBeatLevel():Boolean
+		{
+			return (FlxG.keys.justPressed("K"));
+		}
+		
+		static public function menuDebugShowCollision():Boolean
+		{
+			return (FlxG.keys.justPressed("B"));
+		}
 	}
 }

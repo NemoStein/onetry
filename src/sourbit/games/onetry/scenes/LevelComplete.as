@@ -188,7 +188,7 @@ package sourbit.games.onetry.scenes
 			{
 				updateEffect();
 				
-				if (FlxG.keys.justPressed("ESCAPE") || FlxG.keys.justPressed("SPACE") || FlxG.keys.justPressed("X") || FlxG.keys.justPressed("ENTER"))
+				if (Global.menuAccept())
 				{
 					TweenMax.killAll(true);
 				}
@@ -205,7 +205,7 @@ package sourbit.games.onetry.scenes
 				currentButton.onOver();
 			}
 			
-			if (FlxG.keys.justPressed("W") || FlxG.keys.justPressed("UP"))
+			if (Global.menuMoveUp())
 			{
 				currentButton.onOut();
 				
@@ -217,7 +217,7 @@ package sourbit.games.onetry.scenes
 				
 				FlxG.play(overSFX);
 			}
-			else if (FlxG.keys.justPressed("S") || FlxG.keys.justPressed("DOWN"))
+			else if (Global.menuMoveDown())
 			{
 				currentButton.onOut();
 				
@@ -227,7 +227,7 @@ package sourbit.games.onetry.scenes
 				FlxG.play(overSFX);
 			}
 			
-			if (FlxG.keys.justPressed("SPACE") || FlxG.keys.justPressed("X") || FlxG.keys.justPressed("ENTER"))
+			if (Global.menuAccept())
 			{
 				currentButton.onUp();
 				FlxG.play(PressSFX);

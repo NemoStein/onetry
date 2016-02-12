@@ -253,7 +253,7 @@ package sourbit.games.onetry.states
 		
 		override public function update():void
 		{
-			if (FlxG.keys.justPressed("M"))
+			if (Global.menuMute())
 			{
 				Global.hud.toggle();
 			}
@@ -305,7 +305,7 @@ package sourbit.games.onetry.states
 				}
 			}
 			
-			if (FlxG.keys.justPressed("W") || FlxG.keys.justPressed("UP"))
+			if (Global.menuMoveUp())
 			{
 				if (currentButton.onOut)
 				{
@@ -325,7 +325,7 @@ package sourbit.games.onetry.states
 				
 				FlxG.play(overSFX);
 			}
-			else if (FlxG.keys.justPressed("S") || FlxG.keys.justPressed("DOWN"))
+			else if (Global.menuMoveDown())
 			{
 				if (currentButton.onOut)
 				{
@@ -343,7 +343,7 @@ package sourbit.games.onetry.states
 				FlxG.play(overSFX);
 			}
 			
-			if (FlxG.keys.justPressed("SPACE") || FlxG.keys.justPressed("X") || FlxG.keys.justPressed("ENTER"))
+			if (Global.menuAccept())
 			{
 				if (currentButton.onUp)
 				{
