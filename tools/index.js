@@ -12,7 +12,7 @@ Usage:
 	tools vbump (--major | --minor | --patch)
 	tools taggen
 	tools devdeploy
-	tools mapcrop [--margin=<i>] [<map>]
+	tools mapcrop [--margin=<i>] [--autotile] [<map>]
 	tools --help
 	tools --version
 
@@ -23,6 +23,7 @@ Options:
 	-m --minor      Bumps the minor version (0.x.0)
 	-p --patch      Bumps the patch version (0.0.x)
 	--margin=<i>    Sets the margin around cropped map [default: 2]
+	--autotile      Applies auto-tiling to collision layer
 
 Bumping increments the part and set the next to zero.
 E.g.: With version 2.7.12, passing -m (or --minor) sets the version to 2.8.0
