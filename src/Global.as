@@ -68,7 +68,7 @@ package
 		public static var TO_ALPHA:uint = 0xffC800C8;
 		public static var NEW_ALPHA:uint = 0x30000000;
 		
-		public static var report:ReportProxy;
+		public static var report:Report;
 		
 		public static var musicSequence:SoundSequencePlayer;
 		

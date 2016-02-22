@@ -148,7 +148,7 @@ package sourbit.games.onetry.states
 			
 			if (Global.menuRestart() && (!Global.levelComplete && !Global.lost) && !FlxG.paused)
 			{
-				Global.report.record("levelRestartByR", Global.levelsIDs[Global.currentLevel]).save();
+				//Global.report.record("levelRestartByR", Global.levelsIDs[Global.currentLevel]).save();
 				
 				FlxG.switchState(new Play([Global.currentLevel, false]));
 			}
