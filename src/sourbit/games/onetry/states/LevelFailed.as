@@ -33,7 +33,7 @@ package sourbit.games.onetry.states
 			
 			FlxG.mouse.show();
 			
-			Global.report.record("levelFailedBy" + type.charAt(0).toUpperCase() + type.substring(1), Global.levelsIDs[Global.currentLevel]).save();
+			//Global.report.record("levelFailedBy" + type.charAt(0).toUpperCase() + type.substring(1), Global.levelsIDs[Global.currentLevel]).save();
 			
 			_navigator = [];
 			_selected = 0;

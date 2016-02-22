@@ -74,7 +74,7 @@ package sourbit.games.onetry.scenes
 			
 			if (!Global.completeCheated)
 			{
-				Global.report.recordGrouped("levelTime", Global.levelsIDs[Global.currentLevel], Global.currentTime.toFixed(3)).save();
+				//Global.report.recordGrouped("levelTime", Global.levelsIDs[Global.currentLevel], Global.currentTime.toFixed(3)).save();
 			}
 			
 			//leveling up!
