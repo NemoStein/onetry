@@ -145,7 +145,7 @@ package sourbit.games.onetry.scenes
 				LevelLoader.reloadCurrent();
 			}
 			
-			Global.report.record("levelRestartByPause", Global.levelsIDs[Global.currentLevel]).save();
+			//Global.report.record("levelRestartByPause", Global.levelsIDs[Global.currentLevel]).save();
 			
 			resume();
 			FlxG.switchState( new Loader(Loader.IN_GAME, Play, Global.currentLevel, true));

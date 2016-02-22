@@ -22,7 +22,12 @@ package
 			forceDebugger = true;
 			useSoundHotKeys = false;
 			
-			Global.report = new ReportProxy("http://sourbit.com.br/api/reports/save.php");
+			Global.report = new Report();
+			
+			//Global.report.record('test/01', 11, 12, 13, Report.FAIL_BY_FALL);
+			//Global.report.record('test/01', 21, 22, 23, Report.SUCCESS);
+			//
+			//Global.report.save();
 			
 			AssetLoader.load(function(map:Object):void
 			{
