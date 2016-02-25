@@ -1,26 +1,26 @@
 [
 	// LiftPlatform intro levels
-	"lift/welcome",
-	"lift/dont",
-	"lift/chose",
+	"lift/01",
+	"lift/02",
+	"lift/03",
 	
 	// DropPlatform intro levels
-	"drop/dropping",
-	"drop/stairway",
-	"drop/chose",
+	"drop/01",
+	"drop/02",
+	"drop/03",
 	
 	// MovingPlatform intro levels
-	"moving/now",
-	"moving/who",
-	"moving/hate",
+	"moving/01",
+	"moving/02",
+	"moving/03",
 	
 	// Treadmill intro levels
-	"treadmill/scrolling",
-	"treadmill/up",
-	"treadmill/merry",
+	"treadmill/01",
+	"treadmill/02",
+	"treadmill/03",
 	
 	// Timer/TrapDoor intro levels
-	"timer/under",
+	"timer/01",
 	
 	// Nemo tests
 	"nemo/01",
@@ -36,6 +36,10 @@
 	"greg/06",
 	"greg/07",
 	"greg/08",
+	
+	// Mica tests
+	"mica/01",
+	"mica/02",
 	
 	/*
 		DON'T REMOVE THIS LINE!!
