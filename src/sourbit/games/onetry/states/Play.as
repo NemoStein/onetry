@@ -181,9 +181,17 @@ package sourbit.games.onetry.states
 					}
 					
 					Global.pause.start();
+					if (Global.hud.clock.couting)
+					{
+						Global.hud.clock.pause();
+					}
 				}
 				else
 				{
+					if (!Global.hud.clock.couting)
+					{
+						Global.hud.clock.start();
+					}
 					Global.pause.resume();
 				}
 			}
@@ -200,9 +208,9 @@ package sourbit.games.onetry.states
 				if (!Global.levelComplete)
 				{
 					Global.levelComplete = new LevelComplete();
+					Global.layer5.add(Global.levelComplete);
 				}
 				
-				Global.layer5.add(Global.levelComplete);
 				Global.levelComplete.update();
 				Global.hud.update();
 				
@@ -213,9 +221,10 @@ package sourbit.games.onetry.states
 				if (!Global.levelFailed)
 				{
 					Global.levelFailed = new LevelFailed(Global.failedType);
+					Global.hud.clock.pause();
+					Global.layer5.add(Global.levelFailed);
 				}
 				
-				Global.layer5.add(Global.levelFailed);
 				Global.levelFailed.update();
 				Global.hud.update();
 				
@@ -281,8 +290,6 @@ package sourbit.games.onetry.states
 					if (FlxG.timeScale <= .025)
 					{
 						Global.hud.clock.setTime(_failTime);
-						Global.hud.clock.pause();
-						
 						FlxG.timeScale = 1;
 						
 						Global.failedType = LevelFailed.FAILED_BY_TIME;
