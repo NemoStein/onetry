@@ -114,6 +114,11 @@ package sourbit.games.onetry.states
 				currentButton.onOver();
 			}
 			
+			if (Global.menuRestart())
+			{
+				restart();
+			}
+			
 			if (Global.menuMoveUp())
 			{
 				currentButton.onOut();

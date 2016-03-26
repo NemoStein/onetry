@@ -79,6 +79,11 @@ package sourbit.games.onetry.scenes
 				currentButton.onOver();
 			}
 			
+			if (Global.menuRestart())
+			{
+				restart();
+			}
+			
 			if (Global.menuMoveUp())
 			{
 				currentButton.onOut();
