@@ -87,7 +87,7 @@
     <hidden path="obj" />
   </hiddenPaths>
   <!-- Executed before build -->
-  <preBuildCommand>$(ProjectDir)\tools.cmd taggen</preBuildCommand>
+  <preBuildCommand>"$(ProjectDir)\tools.cmd" taggen</preBuildCommand>
   <!-- Executed after build -->
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->
