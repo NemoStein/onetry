@@ -60,6 +60,7 @@
     <element path="lib\as3commons-logging-2.7.swc" />
     <element path="lib\as3commons-bytecode-1.1.1.swc" />
     <element path="assets\audio\audio.swc" />
+    <element path="assets\audio\play-musics.swc" />
   </libraryPaths>
   <!-- External Libraries -->
   <externalLibraryPaths>
